@@ -1,4 +1,6 @@
-jll
+VSD
 ===
 
-Length Line Java
+Varianza y desviación estándar
+
+Variance and standard deviation
