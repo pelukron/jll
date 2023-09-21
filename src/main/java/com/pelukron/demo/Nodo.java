@@ -8,11 +8,11 @@ package com.pelukron.demo;
  *
  * @author Diego M.
  */
-public class nodo {
+public class Nodo {
     public long dato;
-    public nodo liga;
+    public Nodo liga;
 
-    public nodo(long dato) {
+    public Nodo(long dato) {
         this.dato = dato;
     }
 }
