@@ -8,12 +8,10 @@ public class DemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
-		try{
-			new Lista().menu();
-		} catch(Exception e) {
+		try {
+			Lista.menu();
+		} catch (Exception e) {
 			System.err.println(e);
 		}
-
 	}
-
 }
