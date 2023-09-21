@@ -2,18 +2,17 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package lista;
+package com.pelukron.demo;
 
 /**
  *
  * @author Diego M.
  */
-public class nodo {
+public class Nodo {
     public long dato;
-    public nodo liga;
-    public nodo(long dato){
-        this.dato=dato;
-        
+    public Nodo liga;
+
+    public Nodo(long dato) {
+        this.dato = dato;
     }
-    
 }
