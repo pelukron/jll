@@ -12,8 +12,8 @@ import java.util.Scanner;
  * @author Diego M.
  */
 public class Lista {
-    public static Nodo primerNodo = null;
-    public static boolean salir = false;
+    public Nodo primerNodo = null;
+    public boolean salir = false;
 
     /**
      *
@@ -21,7 +21,7 @@ public class Lista {
      */
     // recorrer lista, iniciando desde el primer Nodo
 
-    public static boolean menu() {
+    public boolean menu() {
         Scanner teclado = new Scanner(System.in);
         System.out.println("**************************");
         System.out.println("1.- Agregar Nodo al final");
@@ -65,7 +65,7 @@ public class Lista {
 
     }
 
-    public static void recorrerLista() {
+    public void recorrerLista() {
         double media;
         int contador = 0;
         double acumulador = 0;
@@ -92,7 +92,7 @@ public class Lista {
     }
 
     // agregar Nodo al final de la lista, se busca el ultimo Nodo
-    public static void agregarNodoFinal(long dato) {
+    public void agregarNodoFinal(long dato) {
         if (primerNodo == null) {
             primerNodo = new Nodo(dato);
 
@@ -105,7 +105,7 @@ public class Lista {
         }
     }
 
-    public static Nodo agregarNodoInicio(long dato) {
+    public Nodo agregarNodoInicio(long dato) {
         if (primerNodo == null) {
             primerNodo = new Nodo(dato);
             return primerNodo;
@@ -117,7 +117,7 @@ public class Lista {
         }
     }
 
-    public static void eliminarUltimoNodo() {
+    public void eliminarUltimoNodo() {
         Nodo actualNodo = primerNodo;
         Nodo anterior = null;
         while (actualNodo.liga != null) {
@@ -127,7 +127,7 @@ public class Lista {
         anterior.liga = null;
     }
 
-    public static Nodo eliminarPrimerNodo() {
+    public Nodo eliminarPrimerNodo() {
         Nodo actualNodo = primerNodo;
         return actualNodo.liga;
 
