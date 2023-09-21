@@ -1,6 +1,5 @@
-package com.example.demo;
+package com.pelukron.demo;
 
-import com.pelukron.demo.Lista;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

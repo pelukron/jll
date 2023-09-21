@@ -13,7 +13,6 @@ import java.util.Scanner;
  */
 public class Lista {
     public Nodo primerNodo = null;
-    public boolean salir = false;
 
     /**
      *
@@ -66,7 +65,7 @@ public class Lista {
     }
 
     public void recorrerLista() {
-        double media;
+        double media = 0;
         int contador = 0;
         double acumulador = 0;
         double desviacion = 0;
@@ -78,7 +77,8 @@ public class Lista {
             System.out.println(actualNodo.dato);
             actualNodo = actualNodo.liga;
         }
-        media = acumulador / contador;
+        double actualValue = (acumulador / contador);
+        media = Double.isNaN(actualValue) ? 0 : actualValue;
         System.out.println("----------------");
         System.out.println("media=" + media);
         actualNodo = primerNodo;
@@ -86,7 +86,7 @@ public class Lista {
             desviacion = desviacion + ((actualNodo.dato - media) * (actualNodo.dato - media));
             actualNodo = actualNodo.liga;
         }
-        desviacion = Math.sqrt((desviacion) / (contador - 1));
+        desviacion = Math.abs(Math.sqrt((desviacion) / (contador - 1)));
         System.out.println("desviacion=" + desviacion);
 
     }
