@@ -1,5 +1,9 @@
-name: Run Gradle on PRs
-on: pull_request
+name: Gradle CI
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 jobs:
   gradle-install:
     strategy:
