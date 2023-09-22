@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package com.pelukron.demo;
+package com.pelukron;
 
 import java.util.Scanner;
 
@@ -65,7 +65,7 @@ public class Lista {
     }
 
     public void recorrerLista() {
-        double media = 0;
+        double media;
         int contador = 0;
         double acumulador = 0;
         double desviacion = 0;
