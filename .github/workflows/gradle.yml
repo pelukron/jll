@@ -18,7 +18,7 @@ jobs:
         java-version: 17
 
     - name: Setup Gradle
-      uses: gradle/gradle-build-action@v2
+      uses: gradle/gradle-build-action@v2.8.0
 
     - name: Execute Gradle install
       run: gradle install
@@ -37,7 +37,7 @@ jobs:
         java-version: 17
 
     - name: Setup Gradle
-      uses: gradle/gradle-build-action@v2
+      uses: gradle/gradle-build-action@v2.8.0
 
     - name: Execute Gradle build
       run: gradle build
@@ -56,7 +56,7 @@ jobs:
         java-version: 17
 
     - name: Setup Gradle
-      uses: gradle/gradle-build-action@v2
+      uses: gradle/gradle-build-action@v2.8.0
 
     - name: Execute Gradle test
       run: gradle test
