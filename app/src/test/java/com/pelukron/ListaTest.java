@@ -1,5 +1,6 @@
 package com.pelukron;
 
+import jdk.jfr.Description;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -9,9 +10,9 @@ public class ListaTest {
     Lista list;
     @BeforeEach void beforeEach(){
         list = new Lista();
-        list.primerNodo = new Nodo(1L);
+        list.setPrimerNodo(new Nodo(1L));
     }
-
+    
     /**
      * Validate when there aren't more node linked
      */
@@ -23,7 +24,7 @@ public class ListaTest {
      * Validate when there are node linked
      */
     @Test void eliminarPrimerNodo2() {
-        list.primerNodo.liga = new Nodo(2L);
+        list.getPrimerNodo().liga = new Nodo(2L);
         assertNotNull(list.eliminarPrimerNodo());
     }
 }

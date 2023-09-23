@@ -12,14 +12,15 @@ import java.util.Scanner;
  * @author Diego M.
  */
 public class Lista {
-    public Nodo primerNodo = null;
+    private Nodo primerNodo;
+
+    public Lista() {
+        this.primerNodo = null;
+    }
 
     /**
-     *
-     * @param actualNodo
+     * recorrer lista, iniciando desde el primer Nodo
      */
-    // recorrer lista, iniciando desde el primer Nodo
-
     public boolean menu() {
         Scanner teclado = new Scanner(System.in);
         System.out.println("**************************");
@@ -41,13 +42,13 @@ public class Lista {
             case 2:
                 System.out.print("\nNÃºmero a Agregar al inicio: ");
                 numero = teclado.nextInt();
-                primerNodo = agregarNodoInicio(numero);
+                setPrimerNodo(agregarNodoInicio(numero));
                 break;
             case 3:
                 eliminarUltimoNodo();
                 break;
             case 4:
-                primerNodo = eliminarPrimerNodo();
+                setPrimerNodo(eliminarPrimerNodo());
                 break;
             case 5:
                 recorrerLista();
@@ -70,7 +71,7 @@ public class Lista {
         double acumulador = 0;
         double desviacion = 0;
         System.out.println("---Lista------");
-        Nodo actualNodo = primerNodo;
+        Nodo actualNodo = getPrimerNodo();
         while (actualNodo != null) {
             contador++;
             acumulador = acumulador + actualNodo.dato;
@@ -81,7 +82,7 @@ public class Lista {
         media = Double.isNaN(actualValue) ? 0 : actualValue;
         System.out.println("----------------");
         System.out.println("media=" + media);
-        actualNodo = primerNodo;
+        actualNodo = getPrimerNodo();
         while (actualNodo != null) {
             desviacion = desviacion + ((actualNodo.dato - media) * (actualNodo.dato - media));
             actualNodo = actualNodo.liga;
@@ -93,11 +94,11 @@ public class Lista {
 
     // agregar Nodo al final de la lista, se busca el ultimo Nodo
     public void agregarNodoFinal(long dato) {
-        if (primerNodo == null) {
-            primerNodo = new Nodo(dato);
+        if (getPrimerNodo() == null) {
+            setPrimerNodo(new Nodo(dato));
 
         } else {
-            Nodo actualNodo = primerNodo;
+            Nodo actualNodo = getPrimerNodo();
             while (actualNodo.liga != null) {
                 actualNodo = actualNodo.liga;
             }
@@ -106,19 +107,19 @@ public class Lista {
     }
 
     public Nodo agregarNodoInicio(long dato) {
-        if (primerNodo == null) {
-            primerNodo = new Nodo(dato);
-            return primerNodo;
+        if (getPrimerNodo() == null) {
+            setPrimerNodo(new Nodo(dato));
+            return getPrimerNodo();
         } else {
             Nodo nuevoNodo;
             nuevoNodo = new Nodo(dato);
-            nuevoNodo.liga = primerNodo;
+            nuevoNodo.liga = getPrimerNodo();
             return nuevoNodo;
         }
     }
 
     public void eliminarUltimoNodo() {
-        Nodo actualNodo = primerNodo;
+        Nodo actualNodo = getPrimerNodo();
         Nodo anterior = null;
         while (actualNodo.liga != null) {
             anterior = actualNodo;
@@ -128,8 +129,15 @@ public class Lista {
     }
 
     public Nodo eliminarPrimerNodo() {
-        Nodo actualNodo = primerNodo;
+        Nodo actualNodo = getPrimerNodo();
         return actualNodo.liga;
+    }
 
+    public Nodo getPrimerNodo() {
+        return primerNodo;
+    }
+
+    public void setPrimerNodo(Nodo primerNodo) {
+        this.primerNodo = primerNodo;
     }
 }
